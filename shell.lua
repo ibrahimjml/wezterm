@@ -2,7 +2,7 @@ local M = {}
 
 M.shells = {
     cmder = { "cmd.exe", "/k", "C:\\cmder\\vendor\\init.bat" },
-    cmd = { "cmd.exe" },
+    cmd = { 'cmd.exe', '/s', '/k' },
     powershell = { "powershell.exe", "-NoLogo" },
     pwsh = { "pwsh.exe", "-NoLogo" }, 
     bash = { "bash.exe" },             
@@ -10,7 +10,7 @@ M.shells = {
 }
 
 
-M.default_shell = "cmder"
+M.default_shell = "cmd"
 
 function M.apply_shell_config(config)
  

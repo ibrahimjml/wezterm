@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local projects = require("projects.projects-samples")
+local projects = require("projects.projects")
 local M = {}
 
 -- Helper to convert projects into selection choices

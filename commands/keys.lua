@@ -8,7 +8,7 @@ function M.setup_keys()
 	-- ALT: primary actions
 	for _, v in ipairs({
 		{ "Enter", act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-		{ "w", act.CloseCurrentPane({ confirm = true }) },
+		{ "w", act.CloseCurrentPane({ confirm = false }) },
 		{ "t", act.SpawnTab("CurrentPaneDomain") }, -- create new tab
 		{ "q", act.QuitApplication }, -- kill all current pane
 		{ "b", act.EmitEvent("toggle-tabbar") }, -- Toggle tab bar

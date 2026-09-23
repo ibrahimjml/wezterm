@@ -3,6 +3,7 @@ local background = require("background")
 local M = {}
 
 function M.setup(config)
+
 	-- Appearance
 	config.font = wezterm.font("JetBrains Mono", { weight = "DemiBold" })
 	config.font_size = 13.0
@@ -26,9 +27,19 @@ function M.setup(config)
 		bottom = 0,
 	}
         config.window_close_confirmation = "NeverPrompt"
+
+        -- Front-end settings 
+        -- config.front_end = "WebGpu"
+        -- config.animation_fps = 60
+
+        -- Scrollback settings
+        config.scrollback_lines = 2000
+
 	-- Performance settings
-	config.max_fps = 120
-	config.animation_fps = 1
+	-- config.max_fps = 120
+	-- config.animation_fps = 1
+
+        -- Layout and appearance settings
 	config.use_fancy_tab_bar = false
 	config.window_background_image = background.bg_image
 	config.window_background_opacity = 0.9 -- lower = more transparent
