@@ -1,13 +1,24 @@
 local wezterm = require("wezterm")
-local background = require("background")
+local background = require("config.background")
+local fonts = require("config.fonts")
+local custom_colors = require("colors.custom")
 local M = {}
 
 function M.setup(config)
 
 	-- Appearance
-	config.font = wezterm.font("JetBrains Mono", { weight = "DemiBold" })
-	config.font_size = 13.0
-	config.color_scheme = "tokyonight"
+	config.font = fonts.font
+	config.font_size = fonts.font_size
+	config.color_schemes = {
+		[custom_colors.name] = custom_colors.colors,
+	}
+	config.color_scheme = custom_colors.name
+        
+        -- cursor settings
+        config.default_cursor_style = "BlinkingBlock"
+        config.cursor_blink_rate = 500
+        cusror_blink_ease_in = "EaseOut"
+        cusror_blink_ease_out = "EaseOut"
 
 	-- Tab bar settings
 	config.enable_tab_bar = true
@@ -42,7 +53,7 @@ function M.setup(config)
         -- Layout and appearance settings
 	config.use_fancy_tab_bar = false
 	config.window_background_image = background.bg_image
-	config.window_background_opacity = 0.9 -- lower = more transparent
+	config.window_background_opacity = 0.8 -- lower = more transparent
 	config.initial_cols = 120
 	config.initial_rows = 30
 	config.warn_about_missing_glyphs = false
